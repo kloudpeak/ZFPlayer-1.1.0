@@ -29,6 +29,8 @@
 @property (nonatomic, assign) BOOL     isLockScreen;
 /** cell上添加player时候，不允许横屏,只运行竖屏状态状态*/
 @property (nonatomic, assign) BOOL     isAllowLandscape;
+/** 亮度文字*/
+@property (nonatomic, strong) NSString *titleText;
 
 + (instancetype)sharedBrightnesView;
 

@@ -560,7 +560,7 @@ typedef NS_ENUM(NSInteger, ZFPlayerState) {
                 NSError *error = [self.player.currentItem error];
                 NSLog(@"视频加载失败===%@",error.description);
                 self.controlView.horizontalLabel.hidden = NO;
-                self.controlView.horizontalLabel.text = @"视频加载失败";
+                self.controlView.horizontalLabel.text = self.horizontalLabelText;
 
             }
         } else if ([keyPath isEqualToString:@"loadedTimeRanges"]) {

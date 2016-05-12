@@ -43,6 +43,8 @@ typedef NS_ENUM(NSInteger, ZFPlayerLayerGravity) {
 @property (nonatomic, assign) BOOL                 hasDownload;
 /** 从xx秒开始播放视频跳转 */
 @property (nonatomic, assign) NSInteger            seekTime;
+/** 视频加载失败 文字*/
+@property (nonatomic, strong) NSString             *horizontalLabelText;
 
 /**
  *  取消延时隐藏controlView的方法,在ViewController的delloc方法中调用
