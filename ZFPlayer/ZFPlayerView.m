@@ -679,7 +679,9 @@ typedef NS_ENUM(NSInteger, ZFPlayerState) {
     if (self.isCellVideo) {
         
         // 横屏时候移除tableView的观察者
-        [self.tableView removeObserver:self forKeyPath:kZFPlayerViewContentOffset];
+        @try {
+            [self.tableView removeObserver:self forKeyPath:kZFPlayerViewContentOffset];
+        } @catch (NSException *exception) {}
         
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
         // 亮度view加到window最上层
@@ -1599,7 +1601,9 @@ typedef NS_ENUM(NSInteger, ZFPlayerState) {
     if (_tableView == tableView) return;
 
     if (_tableView) {
-        [_tableView removeObserver:self forKeyPath:kZFPlayerViewContentOffset];
+        @try {
+            [_tableView removeObserver:self forKeyPath:kZFPlayerViewContentOffset];
+        } @catch (NSException *exception) {}
     }
     _tableView = tableView;
     if (tableView) {
